@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Jump : MonoBehaviour
 {
-    public float jumpHeight = 300f;
+    //private float jumpH = PersistanceManager.instance.jumpHeight;
     public bool isGrounded;
 
     private Rigidbody rb;
@@ -18,7 +18,7 @@ public class Jump : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump"))
         {
-            rb.AddForce(Vector3.up * jumpHeight);
+            rb.AddForce(Vector3.up * PersistanceManager.instance.jumpHeight);
         }
     }
 

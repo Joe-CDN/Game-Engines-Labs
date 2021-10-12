@@ -5,17 +5,15 @@ using UnityEngine;
 
 public class DestroyOnCollision : MonoBehaviour
 {
-    public AudioClip sound;
+
     public Text health;
-
-    private int healthValue = 100;
-
+    
     void Start ()   
      {
          GetComponent<AudioSource> ().playOnAwake = false;
-         GetComponent<AudioSource> ().clip = sound;
+         GetComponent<AudioSource> ().clip = PersistanceManager.instance.sound;
 
-         health.text = "100";
+         health.text = PersistanceManager.instance.healthVal.ToString();
      }  
 
     void OnCollisionEnter(Collision collision)
@@ -24,8 +22,8 @@ public class DestroyOnCollision : MonoBehaviour
         if (collision.collider.tag.Equals("Enemy") && collision.impulse.y > 0.6f)
         {
             GetComponent<AudioSource> ().Play ();
-            healthValue -= 10;
-            health.text = healthValue.ToString();
+            PersistanceManager.instance.healthVal -= 10;
+            health.text = PersistanceManager.instance.healthVal.ToString();
             Destroy(collision.gameObject);
         }
     }   

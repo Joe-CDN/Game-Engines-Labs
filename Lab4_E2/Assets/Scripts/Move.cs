@@ -5,21 +5,20 @@ using UnityEngine;
 public class Move : MonoBehaviour
 {
     private Rigidbody rb;
-    public float movespeed;
+    //private float speed = PersistanceManager.instance.moveSpeed;
     private float dirX, dirZ;
 
     // Start is called before the first frame update
     void Start()
     {
-        movespeed = 3f;
         rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        dirX = Input.GetAxis("Horizontal") * movespeed;
-        dirZ = Input.GetAxis("Vertical") * movespeed;
+        dirX = Input.GetAxis("Horizontal") * PersistanceManager.instance.moveSpeed;
+        dirZ = Input.GetAxis("Vertical") * PersistanceManager.instance.moveSpeed;
     }
 
     private void FixedUpdate()
