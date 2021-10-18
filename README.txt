@@ -1,4 +1,20 @@
 
+--------------------LAB 5--------------------
+
+The two UI buttons in the top left part of the screen are
+toggle for selecting the type of prefab.
+
+Cubes are the default prefab.
+
+press a button to start spawning that prefab
+
+
+
+
+
+
+--------------------LAB 4--------------------
+
 Observer Pattern:
 
 - First, added a sound file into the new 'Sounds' folder
